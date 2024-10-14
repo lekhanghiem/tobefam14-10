@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "src", "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/component/footer/page.js"
+, "src/components/Page/Home/WhatWeDo.tsx", "src/components/Page/Home/WhatCanYou.tsx", "src/components/Page/Home/WeAreWith.tsx", "src/components/Page/Home/FoodTraceability.tsx", "src/components/Page/Home/Factors.tsx", "src/components/Page/Home/Comprehensive.tsx", "src/components/Page/Home/Banner.tsx", "src/components/Global/footer.jsx", "src/components/Global/Hr.jsx", "src/components/Global/header.jsx"  ],
+  "exclude": ["node_modules"]
+}
