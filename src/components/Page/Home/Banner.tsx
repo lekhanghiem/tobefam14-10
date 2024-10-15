@@ -6,6 +6,7 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
+import FadeFlipAnimationY from '@/components/Global/motion/FadeFlipAnimationX';
 
 const Item = styled(Paper)(({ theme }) => ({
   display: 'flex',
@@ -48,17 +49,19 @@ const Banner = () => {
       <section>
         <div className="bg-background-image  font-normal">
           <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={2}>
-              {Items?.map((item) => (
-                <Grid item xs={12} md={4}>
-                  <Item>
-                    <div className="text-black">
-                      <p className="font-bold  text-4xl leading-10">
-                        {item.title}
-                      </p>
-                      <p className="text-xl leading-8"> {item.description}</p>
-                    </div>
-                  </Item>
+            <Grid container spacing={0}>
+              {Items?.map((item, index) => (
+                <Grid key={index} item xs={12} md={4}>
+                  <FadeFlipAnimationY>
+                    <Item>
+                      <div className="text-black">
+                        <p className=" text-3xl leading-10 font-bold">
+                          {item.title}
+                        </p>
+                        <p className="text-xl leading-8"> {item.description}</p>
+                      </div>
+                    </Item>
+                  </FadeFlipAnimationY>
                 </Grid>
               ))}
             </Grid>

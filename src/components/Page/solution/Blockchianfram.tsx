@@ -3,10 +3,10 @@ import React from 'react'
 const Blockchianfram = () => {
   return (
     <div className="h-full w-full text-white py-10 container mx-auto">
-      <div className="text-xl w-8/12 mx-auto leading-8 text-center ">
+      <div className="text-4xl w-8/12 mx-auto leading-10 text-center ">
         BLOCKCHAIN FARM BLOCKCHAIN ​​TRACKING INFORMATION PORTAL
       </div>
-      <div className="text-base gap-y-10 mx-auto w-10/12 pt-10 leading-6">
+      <div className="text-xl  mx-auto w-10/12 pt-10 leading-8">
         <div>
           The portal is the place to collect traceability information about semi-processed products
           or finished products that are standardized according to GS1 and transferred from partners

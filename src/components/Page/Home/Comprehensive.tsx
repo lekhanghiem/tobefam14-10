@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { Button } from '@mui/material';
+import FadeRight from '@/components/Global/motion/FadeRight';
 
 // Tạo kiểu cho Item bằng MUI
 const Item = styled(Paper)(({ theme }) => ({
@@ -65,7 +66,7 @@ const Comprehensive: React.FC = () => {
           layout="intrinsic"
         />
       </div>
-      <div className="text-white mx-auto w-11/12">
+      <FadeRight className="text-white container mx-auto w-11/12">
         <p className="text-center font-bold text-5xl text-white px-2 py-20">
           Comprehensive solution for State Management model or Enterprise model
           and Association model
@@ -108,7 +109,7 @@ const Comprehensive: React.FC = () => {
             </Grid>
           </Box>
         </div>
-      </div>
+      </FadeRight>
     </div>
   );
 };

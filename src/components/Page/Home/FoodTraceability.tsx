@@ -1,3 +1,4 @@
+import FadeLeft from '@/components/Global/motion/FadeLeft';
 import Image from 'next/image';
 import React from 'react';
 
@@ -12,7 +13,7 @@ const FoodTraceability = () => {
           width={1395}
           height={5000000}
         />
-        <div className=" w-full  h-full  mx-auto">
+        <FadeLeft className=" w-full  h-full container  mx-auto">
           <div className="  w-6/12 text-white pl-5 py-10">
             <p className="py-3 font-bold text-4xl  leading-9">
               TE-FOOD is a Food Traceability System from Farm to Table that aims
@@ -44,7 +45,7 @@ const FoodTraceability = () => {
               </ol>
             </div>
           </div>
-        </div>
+        </FadeLeft>
       </div>
     </div>
   );

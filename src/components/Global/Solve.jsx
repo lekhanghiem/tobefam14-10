@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { Button, TextField, InputAdornment } from '@mui/material'; // Removed the duplicate Box import
+import FadeRight from './motion/FadeRight';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: 'transparent',
@@ -58,51 +59,53 @@ const StyledButton = styled(Button)({
 
 const Solve = () => {
   return (
-    <div className="flex justify-center">
-      <div className="w-11/12 rounded-3xl h-full shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] bg-[linear-gradient(to_right,rgba(1,250,169,1),rgb(105,250,118),rgba(159,247,88,1))]">
-        <Box sx={{ flexGrow: 1, display: 'flex', alignContent: 'center' }}>
-          <Grid container spacing={5}>
-            <Grid item xs={12} md={6}>
-              <Item sx={{ height: { sx: '100px', md: '250px' } }}>
-                <div className="w-11/12 mx-auto text-left">
-                  <div className="text-4xl font-bold text-[#007E94] leading-10 py-3">
-                    Solve Complex Data Challenges.
+    <FadeRight className="flex justify-center py-20">
+      <div className="w-11/12 mx-auto container  rounded-3xl h-full shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] bg-[linear-gradient(to_right,rgba(1,250,169,1),rgb(105,250,118),rgba(159,247,88,1))]">
+        <div className="">
+          <Box sx={{ flexGrow: 1, display: 'flex', alignContent: 'center' }}>
+            <Grid container spacing={5}>
+              <Grid item xs={12} md={6}>
+                <Item sx={{ height: { sx: '100px', md: '250px' } }}>
+                  <div className="w-11/12 mx-auto text-left">
+                    <div className="text-4xl font-bold text-[#007E94] leading-10 py-3">
+                      Solve Complex Data Challenges.
+                    </div>
+                    <div className="text-[#007E94] leading-8 text-xl">
+                      Subscribe to our newsletter for regular updates.
+                    </div>
                   </div>
-                  <div className="text-[#007E94] leading-8 text-xl">
-                    Subscribe to our newsletter for regular updates.
-                  </div>
-                </div>
-              </Item>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Item sx={{ height: { sx: '100px', md: '250px' } }}>
-                <Box
-                  sx={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    padding: '20px',
-                    width: '100%',
-                  }}
-                >
-                  <StyledTextField
-                    className="w-[100%]"
-                    placeholder="Enter your email"
-                    InputProps={{
-                      endAdornment: (
-                        <InputAdornment position="end">
-                          <StyledButton>Subscribe</StyledButton>
-                        </InputAdornment>
-                      ),
+                </Item>
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <Item sx={{ height: { sx: '100px', md: '250px' } }}>
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      padding: '20px',
+                      width: '100%',
                     }}
-                  />
-                </Box>
-              </Item>
+                  >
+                    <StyledTextField
+                      className="w-[100%]"
+                      placeholder="Enter your email"
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">
+                            <StyledButton>Subscribe</StyledButton>
+                          </InputAdornment>
+                        ),
+                      }}
+                    />
+                  </Box>
+                </Item>
+              </Grid>
             </Grid>
-          </Grid>
-        </Box>
+          </Box>
+        </div>
       </div>
-    </div>
+    </FadeRight>
   );
 };
 

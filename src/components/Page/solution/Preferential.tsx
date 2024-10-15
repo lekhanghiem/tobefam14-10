@@ -3,12 +3,12 @@ import Image from 'next/image';
 const Preferential = () => {
   return (
     <div className="h-full w-full text-white pt-10 container mx-auto">
-      <div className="leading-8 text-2xl w-6/12 mx-auto text-center">
+      <div className="leading-10 text-4xl w-6/12 mx-auto text-center">
         Preferential prices for state management(Price announced from January 1, 2023)
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 w-11/12 mx-auto pt-10">
         <div className="h-full   mx-auto   rounded-3xl  w-10/12 py-20  text-center bg-[#023552] shadow-[0_4px_4px_rgba(42,252,255,0.25)]">
-          <div className="text-lg leading-8 p-6 pb-10">
+          <div className="text-xl leading-10 p-6 pb-10">
             Province with livestock scale: Total number of livestock (pigs), buffaloes, cows,
             horses, goats, sheep, deer) over 1.5 million or total number of poultry (chickens,
             ducks, geese, geese, birds) quail, pigeon, ostrich) over 20 million. Service cost is
@@ -16,7 +16,7 @@ const Preferential = () => {
           </div>
         </div>
         <div className="h-full   mx-auto   rounded-3xl  w-10/12 py-20  text-center bg-[#023552] shadow-[0_4px_4px_rgba(42,252,255,0.25)]">
-          <div className="text-lg leading-8 p-6 pb-10">
+          <div className="text-xl leading-10 p-6 pb-10">
             Province with livestock scale: Total number of livestock (pigs), buffaloes, cows,
             horses, goats, sheep, deer) from 500,000 to 1,500,000 heads or total number of poultry
             (chickens, ducks, geese, geese, quail, pigeons, ostriches) from 10 million to 20
@@ -24,7 +24,7 @@ const Preferential = () => {
           </div>
         </div>
         <div className="h-full   mx-auto   rounded-3xl  w-10/12 py-20  text-center bg-[#023552] shadow-[0_4px_4px_rgba(42,252,255,0.25)]">
-          <div className="text-lg leading-8 p-6 pb-10">
+          <div className="text-xl leading-10 p-6 pb-10">
             Province with livestock scale: Total number of livestock (pigs), buffaloes, cows,
             horses, goats, sheep, deer) less than 500,000 heads or total number of poultry
             (chickens, ducks, geese, quails) , pigeons, ostriches) under 10 million. Service cost is
@@ -32,7 +32,7 @@ const Preferential = () => {
           </div>
         </div>
       </div>
-      <div className="w-10/12 mx-auto pt-10 pb-3 text-base">
+      <div className="w-10/12 mx-auto pt-10 pb-3 text-xl leading-10">
         <div>Service costs</div>
         <div>- Includes:</div>
         <div>+ License fees to use the system and applications on smartphones;</div>
@@ -53,7 +53,7 @@ const Preferential = () => {
         <div>+ Travel expenses (airfare, vehicle) and living expenses (hotel).</div>
       </div>
       <div className="bg-[#012539] pb-20 py-10">
-        <div className="text-center w-5/12 text-base leading-6 mx-auto pb-10">
+        <div className="text-center w-5/12 text-4xl leading-10 mx-auto pb-10">
           BLOCKCHAIN FARM Blockchain “Herd Management and Disease Information” System
         </div>
         <div>

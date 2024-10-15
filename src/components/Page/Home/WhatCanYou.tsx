@@ -5,6 +5,7 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
+import FadeRight from '@/components/Global/motion/FadeRight';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: 'transparent',
@@ -81,30 +82,29 @@ const WhatCanYou = () => {
             <Box sx={{ flexGrow: 1 }}>
               <Grid container spacing={5}>
                 {Items.map((item, index) => (
-                  <Grid item xs={12} md={6}>
-                    <Item>
-                      <div
-                        key={index}
-                        className=" flex flex-col lg:flex-row gap-3"
-                      >
-                        <div className="w-12/12 flex justify-center items-center">
-                          <Image
-                            src={item.src}
-                            alt={item.title}
-                            width={item.imgSize.width}
-                            height={item.imgSize.height}
-                          />
+                  <Grid item xs={12} md={6} key={index}>
+                    <FadeRight>
+                      <Item>
+                        <div className=" flex flex-col md:flex-row gap-3">
+                          <div className="w-12/12 flex justify-center items-center">
+                            <Image
+                              src={item.src}
+                              alt={item.title}
+                              width={item.imgSize.width}
+                              height={item.imgSize.height}
+                            />
+                          </div>
+                          <div className="text-white text-left">
+                            <p className=" text-3xl leading-8  pt-0">
+                              {item.title}
+                            </p>
+                            <p className="text-xl pt-2 leading-8">
+                              {item.description}
+                            </p>
+                          </div>
                         </div>
-                        <div className="text-white text-left">
-                          <p className=" text-3xl leading-8  pt-0">
-                            {item.title}
-                          </p>
-                          <p className="text-xl pt-2 leading-8">
-                            {item.description}
-                          </p>
-                        </div>
-                      </div>
-                    </Item>
+                      </Item>
+                    </FadeRight>
                   </Grid>
                 ))}
               </Grid>

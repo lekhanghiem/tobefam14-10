@@ -5,6 +5,7 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
+import FadeRight from '@/components/Global/motion/FadeRight';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: 'transparent',
@@ -28,10 +29,12 @@ const WhatWeDo = () => {
           className="absolute top-0"
         />
       </div>
-      <div className=" mx-auto w-11/12">
+      <FadeRight className=" mx-auto container w-11/12">
         <div className=" ">
           <div className="text-center">
-            <div className="text-4xl leading-10 font-bold py-3">What we do.</div>
+            <div className="text-4xl leading-10 font-bold py-3">
+              What we do.
+            </div>
             <div className=" py-3">
               <div className="h-2  w-2/12 mx-auto rounded-2xl   bg-[rgba(122,248,77,1)]  "></div>
             </div>
@@ -106,7 +109,7 @@ const WhatWeDo = () => {
           </Box>
           <div className="pt-10 grid lg:grid-cols-2 grid-cols-1 gap-10 lg:gap-10 px-5 md:px-10  w-full"></div>
         </div>
-      </div>
+      </FadeRight>
     </div>
   );
 };

@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { Button } from '@mui/material';
+import FadeRight from '@/components/Global/motion/FadeRight';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: '#004F60',
@@ -58,7 +59,7 @@ const Factors = () => {
 
   return (
     <div className="py-5 bg-[#003646] text-center">
-      <div className=" mx-auto w-11/12">
+      <div className=" mx-auto container w-11/12">
         <div>
           <div className="text-5xl leading-10 font-bold text-white pt-3">
             Factors
@@ -71,35 +72,37 @@ const Factors = () => {
           <Grid container spacing={5}>
             {Items.map((item, index) => (
               <Grid item xs={12} xl={3} md={6} sm={6} key={index}>
-                <Item>
-                  <div className="flex flex-col gap-10 pt-10   ">
-                    <div className="flex justify-center">
-                      <Image
-                        src={item.url}
-                        alt={item.title}
-                        width={item.imgSize.width}
-                        height={item.imgSize.height}
-                      />
+                <FadeRight>
+                  <Item>
+                    <div className="flex flex-col gap-10 pt-10   ">
+                      <div className="flex justify-center">
+                        <Image
+                          src={item.url}
+                          alt={item.title}
+                          width={item.imgSize.width}
+                          height={item.imgSize.height}
+                        />
+                      </div>
+                      <div className="text-center">
+                        <p className="text-4xl text-white leading-10 font-bold">
+                          {item.title}
+                        </p>
+                      </div>
                     </div>
-                    <div className="text-center">
-                      <p className="text-4xl text-white leading-10 font-bold">
-                        {item.title}
-                      </p>
+                    <div className="absolute bottom-16 w-full text-center">
+                      <Button
+                        className="bg-gradient-to-r from-[#9df75a] to-[#02ffac] shadow-xl hover:scale-105 rounded-3xl text-black"
+                        sx={{
+                          color: 'black',
+                          padding: '10px 20px',
+                          minWidth: '100px',
+                        }}
+                      >
+                        {item.button}
+                      </Button>
                     </div>
-                  </div>
-                  <div className="absolute bottom-16 w-full text-center">
-                    <Button
-                      className="bg-gradient-to-r from-[#9df75a] to-[#02ffac] shadow-xl hover:scale-105 rounded-3xl text-black"
-                      sx={{
-                        color: 'black',
-                        padding: '10px 20px',
-                        minWidth: '100px',
-                      }}
-                    >
-                      {item.button}
-                    </Button>
-                  </div>
-                </Item>
+                  </Item>
+                </FadeRight>
               </Grid>
             ))}
           </Grid>

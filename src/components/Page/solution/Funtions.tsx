@@ -1,44 +1,99 @@
-import React from 'react'
-import Image from 'next/image'
-const Functions = () => {
-    return (
-        <div className='bg-gradient-to-r from-[rgba(0,251,145,1)] to-[rgba(3,99,153,1)] w-full h-full  text-white py-10'>
-            <div className="container mx-auto ">
-                <div className='text-3xl font-bold text-center '>   Functions</div>
-                <div className='grid md:grid-cols-2 grid-cols-1 gap-10 w-11/12 mx-auto py-5'>
-                    <div className="bg-gradient-to-r from-cyan-600/30 via-sky-600/30 to-indigo-600/30 w-full h-full rounded-xl shadow-custom ">
-                        <div className='flex flex-col md:flex-row gap-3 py-6 px-3'>
-                            <div className='mx-auto md:mx-0 w-4/12 md:w-3/12'>
-                                <Image src="/images/SOLUTION/gear.png" alt="" width={120} height={120} />
-                            </div>
-                            <div className='text-sx leading-8'>We don't believe there is "one size fits all"! BLOCKCHAIN FARM provides tailor-made processes for each type and industry of food.</div>
-                        </div>
-                    </div> <div className="bg-gradient-to-r from-cyan-600/30 via-sky-600/30 to-indigo-600/30 w-full h-full rounded-xl shadow-custom ">
-                        <div className='flex flex-col md:flex-row gap-3 py-6 px-3'>
-                            <div className='mx-auto md:mx-0 w-4/12'>
-                                <Image src="/images/SOLUTION/bitcoin.png" alt="" width={120} height={120} />
-                            </div>
-                            <div className='text-sx leading-8'>Although applying the most modern technology, BLOCKCHAIN FARM is the most suitable choice for developing countries due to: low price, excellent service and no need to invest in additional equipment or human resources.</div>
-                        </div>
-                    </div> <div className="bg-gradient-to-r from-cyan-600/30 via-sky-600/30 to-indigo-600/30 w-full h-full rounded-xl shadow-custom ">
-                        <div className='flex flex-col md:flex-row gap-3 py-6 px-3'>
-                            <div className='mx-auto md:mx-0 w-4/12'>
-                                <Image src="/images/SOLUTION/diversity.png" alt="" width={120} height={120} />
-                            </div>
-                            <div className='text-sx leading-8'>BLOCKCHAIN FARM connects authorities, consumers and the entire supply chain into a traceability process to provide all necessary information such as reports, forecasts, and alarms. Fully automated Big Data analysis.</div>
-                        </div>
-                    </div> <div className=" bg-gradient-to-r from-cyan-600/30 via-sky-600/30 to-indigo-600/30 w-full h-full rounded-xl shadow-custom  ">
-                        <div className='flex flex-col md:flex-row gap-3 py-6 px-3'>
-                            <div className='mx-auto md:mx-0 w-4/12'>
-                                <Image src="/images/SOLUTION/trade.png" alt="" width={120} height={120} />
-                            </div>
-                            <div className='text-sx leading-8'>Food supply chains are increasingly global, so BLOCKCHAIN FARM has applied international standards such as GS1 and Global GAP to meet all requirements of every country in the world.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
-}
+import React from 'react';
+import Image from 'next/image';
+import { Box, Grid, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import Paper from '@mui/material/Paper';
 
-export default Functions
+const Item = styled(Paper)(({ theme }) => ({
+  background:
+    'linear-gradient(180deg, rgba(0, 79, 96, 0.3) 0%, rgba(0, 162, 198, 0.3) 100%);',
+  borderRadius: '12px',
+  boxShadow: ' 0px 4px 4px rgba(0, 0, 0, 0.25)',
+  display: 'flex',
+  py: 6,
+  gap: 20,
+  height: '100%',
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: 'left',
+  color: theme.palette.text.secondary,
+  ...theme.applyStyles('dark', {
+    backgroundColor: '#1A2027',
+  }),
+}));
+const Functions = () => {
+  const solutionCards = [
+    {
+      image: '/images/SOLUTION/gear.png',
+      description:
+        'We don\'t believe there is "one size fits all"! BLOCKCHAIN FARM provides tailor-made processes for each type and industry of food.',
+      size: {
+        width: 61,
+        height: 61,
+      },
+    },
+    {
+      image: '/images/SOLUTION/bitcoin.png',
+      description:
+        'Although applying the most modern technology, BLOCKCHAIN FARM is the most suitable choice for developing countries due to: low price, excellent service and no need to invest in additional equipment or human resources.',
+      size: {
+        width: 58,
+        height: 58,
+      },
+    },
+    {
+      image: '/images/SOLUTION/diversity.png',
+      description:
+        'BLOCKCHAIN FARM connects authorities, consumers and the entire supply chain into a traceability process to provide all necessary information such as reports, forecasts, and alarms. Fully automated Big Data analysis.',
+      size: {
+        width: 61,
+        height: 61,
+      },
+    },
+    {
+      image: '/images/SOLUTION/trade.png',
+      description:
+        'Food supply chains are increasingly global, so BLOCKCHAIN FARM has applied international standards such as GS1 and Global GAP to meet all requirements of every country in the world.',
+      size: {
+        width: 62,
+        height: 62,
+      },
+    },
+  ];
+
+  return (
+    <Box
+      sx={{
+        background:
+          'linear-gradient(103.58deg, #00FB91 -13.81%, #036399 102.15%)',
+        py: 10,
+      }}
+    >
+      <div className="text-white container mx-auto">
+        <div className="text-4xl font-bold text-center ">Functions</div>
+        <div className="w-10/12 mx-auto pt-10">
+          <Grid container spacing={5}>
+            {solutionCards.map((card, index) => (
+              <Grid item xs={12} md={6} key={index}>
+                <Item>
+                  <Image
+                    src={card.image}
+                    alt={card.image}
+                    width={card.size.width}
+                    height={card.size.height}
+                    className="h-32"
+                  />
+                  <Typography variant="h6" sx={{ lineHeight: 1.8,color:'white' }}>
+                    {card.description}
+                  </Typography>
+                </Item>
+              </Grid>
+            ))}
+          </Grid>
+        </div>
+      </div>
+    </Box>
+  );
+};
+
+export default Functions;

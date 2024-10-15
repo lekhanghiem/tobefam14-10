@@ -1,51 +1,86 @@
-import React from 'react'
+import React from 'react';
 import Image from 'next/image';
-const Blockchian = () => {
-    return (
-        <div className='relative '>
-            <div className=' w-full h-full'>
-                <Image
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
 
-                    src="/images/SOLUTION/Group48.png"
-                    alt=""
-                    width={4051}
-                    height={7800}
-                    className='absolute w-full h-full'
-                />
-            </div>
-            <div className='pl-10 lg:pl-40 py-20 lg:py-40 relative container mx-auto'>
-                <div className='h-full lg:w-7/12   w-8/12  bg-[rgba(6,87,153,0.3)] shadow-[0_4px_4px_rgba(100,154,224,0.92)] border-2 text-white md:px-10 px-3 py-2 md:py-10'>
-                    <div className='font-bold leading-5  lg:leading-8 text-sm  lg:text-3xl'>Blockchain Ledger</div>
-                    <div>
-                        <div className='flex flex-row gap-3 pt-2 lg:pt-6 px-3 lg:px-10'>
-                            <div>
-                                <Image
-                                    src="/images/SOLUTION/openlock.png"
-                                    alt=""
-                                    width={40}
-                                    height={40}
-                                    
-                                />
-                            </div>
-                            <div className='text-xs leading-5 text-white'>Blockchain provides a reliable and immutable network of traceable information. This commits to eliminating any possibility of supply chain data corruption.</div>
-                        </div>
-                        <div className='flex flex-row gap-2 pt-2 lg:pt-6 px-2 lg:px-10'>
-                            <div>
-                                <Image
-                                    src="/images/SOLUTION/world.png"
-                                    alt=""
-                                    width={30}
-                                    height={30}
-                                    
-                                />
-                            </div>
-                            <div className='text-xs leading-5'>It provides a global network of food quality and transportation information for livestock products and fresh foods.</div>
-                        </div>
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: 'transparent',
+  width: '60%',
+  height: '100%',
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+  ...(theme.palette.mode === 'dark' && {
+    backgroundColor: '#1A2027',
+    color: theme.palette.text.primary,
+  }),
+}));
+
+const Blockchain = () => {
+  return (
+    <div className="relative ">
+      <Image
+        src="/images/SOLUTION/Group48.png"
+        alt="Blockchain background"
+        width={4051}
+        height={7800}
+        className="absolute w-full h-full"
+        priority 
+      />
+      <div className="w-10/12 container mx-auto py-20">
+        <Box sx={{ flexGrow: 1 }}>
+          <Grid container spacing={2}>
+            <Grid item xs={12} xl={12}>
+              <Item>
+                <Box
+                  className=" rounded-xl text-white "
+                  sx={{ boxShadow: '0px 4px 4px 0 #2AFCFF40' }}
+                >
+                  <div className="py-10">
+                    <div className="font-bold leading-10 text-4xl pl-4">
+                      Blockchain Ledger
                     </div>
-                </div>
-            </div>
-        </div>
-    )
-}
+                    <div className="flex flex-col gap-5 pt-5 w-11/12 mx-auto">
+                      {[
+                        {
+                          src: '/images/SOLUTION/openlock.png',
+                          alt: 'Open lock icon',
+                          text: 'Blockchain provides a reliable and immutable network of traceable information. This commits to eliminating any possibility of supply chain data corruption.',
+                        },
+                        {
+                          src: '/images/SOLUTION/world.png',
+                          alt: 'World icon',
+                          text: 'It provides a global network of food quality and transportation information for livestock products and fresh foods.',
+                        },
+                      ].map((item, index) => (
+                        <div key={index} className="flex flex-row gap-3">
+                          <div>
+                            <Image
+                              src={item.src}
+                              alt={item.alt}
+                              width={40}
+                              height={40}
+                              className="h-10"
+                            />
+                          </div>
+                          <div className="text-xl leading-8 text-white">
+                            {item.text}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </Box>
+              </Item>
+            </Grid>
+          </Grid>
+        </Box>
+      </div>
+    </div>
+  );
+};
 
-export default Blockchian
+export default Blockchain;
